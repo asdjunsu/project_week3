@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta
+      charset="UTF
+-8"
+    />
+    <title>Blog</title>
+    
+    <style>
+        #str {
+          color: white;
+          position : absolute;
+          top : 350px;
+          left : 70px;
+       
+          z-index: 1;
+        }
+
+        #subpic{
+          position : relative;
+        }
+
+        div {
+          float : left
+        }
+
+        h1{
+          color : white;
+          background-color : black;
+          align:center;
+          text-align: center
+        }
+        </style>
+
+  </head>
+  <body>
+    <h1>함께가조</h1>
+    {% for p in posts %}
+    <div>
+      {% comment %} <h2><a href="{{	p.get_absolute_url }}"> {{ p.name }} </a></h2>    </div> {% endcomment %}      
+      {% comment %} <h2>{{ p.introImage.url }} </a></h2> {% endcomment %}
+      <div id='subpic'>
+      {% if p.introImage %}
+      <h2><span id="str">{{ p.name }}</span></h2>
+      <a href="{{	p.get_absolute_url }}"> <img src="{{ p.introImage.url }}" width="550" height="1100">
+      {% endif %}
+      </a></div>
+      {% comment %}
+      <h4>{{ p.created_at }}</h4>
+      <p>{{ p.content }}</p>
+      {% endcomment %} {% endfor %}
+
+    
+  </body>
+</html>

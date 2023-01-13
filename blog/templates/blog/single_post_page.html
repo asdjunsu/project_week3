@@ -1,0 +1,31 @@
+<!DOCTYPE	html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>{{	post.title }} - Blog	</title>
+<style>
+    #subpic{
+        align:center;
+      }
+</style>
+
+</head>
+<body>
+
+<nav id='subpic'> <!-- 네비게이션 링크 -->
+    <h1><a href="/blog/">blog_home</a></h1>
+</nav>
+
+<h1> {{	post.name }} </h2>
+{% comment %} <h1> {{	post.title }} </h2> {% endcomment %}
+<h4> {{	post.mbit }} </h4>
+<h4> {{	post.email_address }} </h4>
+<p> {{	post.content }} </p>
+
+<a href="#!"><img class="card-img-top" src="{{post.introImage.url}}" width="20%" height="20%" alt="..." /></a>
+
+
+<hr>
+
+</body>
+</html>
